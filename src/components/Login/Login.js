@@ -31,12 +31,12 @@ const Login = ({
       container
       justifyContent="center"
       alignItems="center"
-      style={{ minHeight: "90vh", paddingBottom: "50%" }}
+      style={{ minHeight: "90vh", paddingBottom: "50%", paddingTop: "10%" }}
     >
-      <Grid item xs={10} sm={8} md={6}>
+      <Grid item xs={10} sm={8} md={6} lg={5}>
         <Card>
           <CardContent>
-            <Typography variant="h5" component="h2" gutterBottom>
+            <Typography variant="h5" component="h2" gutterBottom align="center">
               Login
             </Typography>
             <TextField
