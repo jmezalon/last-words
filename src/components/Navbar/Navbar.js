@@ -1,9 +1,11 @@
 import React from "react";
 import { AppBar, Toolbar, Typography, Button } from "@mui/material";
 
-const Navbar = ({ setIsLoggedIn, isLoggedIn }) => {
+const Navbar = ({ isLoggedIn, isSecretCorrect }) => {
   const handleLogout = () => {
-    setIsLoggedIn(false);
+    localStorage.removeItem("isLoggedIn");
+    localStorage.removeItem("isSecretCorrect");
+    window.location.href = "/";
   };
 
   return (
@@ -12,7 +14,7 @@ const Navbar = ({ setIsLoggedIn, isLoggedIn }) => {
         <Typography variant="h6" component="div" sx={{ flexGrow: 1 }}>
           Last Words
         </Typography>
-        {isLoggedIn && (
+        {(isLoggedIn || isSecretCorrect) && (
           <Button color="inherit" onClick={handleLogout}>
             Logout
           </Button>
